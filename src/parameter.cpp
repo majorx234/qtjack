@@ -21,11 +21,11 @@
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 
-// Own includes
-#include "parameter.h"
-
 // JACK includes
 #include <jack/control.h>
+
+// Own includes
+#include "parameter.h"
 
 // Qt includes
 #include <QVariant>
