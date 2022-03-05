@@ -11,13 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package( Qt5Core REQUIRED)
 find_package(Jack REQUIRED)
 
-include_directories(${PROJECT_INCLUDE_DIR})
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-include_directories(include)
-include_directories(${Qt5Core_INCLUDE_DIRS})
-include_directories(${JACK_INCLUDE_DIRS})
-
-
 set(QTJACK_HEADERS
   ${CMAKE_CURRENT_SOURCE_DIR}/include/AudioBuffer
   ${CMAKE_CURRENT_SOURCE_DIR}/include/AudioPort
@@ -75,10 +68,19 @@ add_library(qtjack SHARED
     ${QTJACK_HEADERS}
     ${QTJACK_MOCrcs})
 
+target_include_directories(qtjack PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(qtjack PUBLIC include)
+target_include_directories(qtjack SYSTEM
+  PUBLIC ${Qt5Core_INCLUDE_DIRS})
+target_include_directories(qtjack SYSTEM
+  PUBLIC ${JACK_INCLUDE_DIRS})
+
 target_link_libraries(qtjack PRIVATE 
     ${JACK_LIBRARIES}
     Qt5::Core)
 
+set_target_properties(qtjack PROPERTIES PUBLIC_HEADER "${QTJACK_HEADERS}")
+
 install(TARGETS qtjack
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    PUBLIC_HEADER DESTINATION include/qtjack)
