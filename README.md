@@ -1,10 +1,3 @@
-[![Qt Pods](http://qt-pods.org/assets/logo.png "Qt Pods")](http://qt-pods.org)
-
-Support this and other free software projects of mine by donating bitcoins:
-```cpp
-1Hk5EkcZRaio4uGXSU453E1bNFTecsZEpt
-```
-
 Say Hello To QtJack
 =======================
 
@@ -22,10 +15,28 @@ QtJack solely relies on a recent Qt and libjack/libjack2. Install using the foll
 
 `sudo apt-get install libjack-jackd2-dev jackd2`
 
+or on Archlinux:
+
+`sudo pacman -S jack2`
+
+Afterwards: 
+
+`mkdir build;cd build`
+
+`cmake ..` 
+
+`make`
+
+`make install`
+
+or use  Arch Build System (ABS):
+
+PKGBUILD can be found here:
+https://github.com/majorx234/qtjack_PKGBUILD.git
+
+
 Methods considered to be realtime safe are marked with REALTIME_SAFE.
 
-You can add QtJack to your project easily by using qt-pods. Read more about qt-pods here:
-https://github.com/cybercatalyst/qt-pods
 
 How to use QtJack to build a JACK server
 ==========
@@ -105,11 +116,29 @@ int main(int argc, char *argv[])
 
 ```
 
+Depricated
+========
+You can add QtJack to your project easily by using qt-pods. Read more about qt-pods here:
+https://github.com/cybercatalyst/qt-pods
+
+[![Qt Pods](http://qt-pods.org/assets/logo.png "Qt Pods")](http://qt-pods.org)
+
+- I switched to CMake Build System, so there is no support to QTPods anymore
+  - but I'm open for suggestion how to add this to my build scripts
+
+
 License
 ========
 QtJack is licensed under the terms of the GNU GPL v3. Contact me to obtain a proprietary license (closed-source) at jacob@omg-it.works .
 
 Happy hacking!
+
+Support this and other free software projects of jacob@omg-it.works by donating bitcoins:
+```cpp
+1Hk5EkcZRaio4uGXSU453E1bNFTecsZEpt
+```
+
+Support majorx234@gmail.com with feedback and suggestions ;)
 
 
 
