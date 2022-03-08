@@ -6,7 +6,7 @@ The purpose of QtJack is to make it easy to interface with a JACK audio server f
 I really like to develop based on practical aspects. If you find QtJack hard to understand or to use, please let me know. This is a clear indicator that it is lacking documentation or needs refactoring and will be treated as a bug.
 
 Also checkout the example repository:
-https://github.com/cybercatalyst/QtJack-Examples
+https://github.com/majorx234/QtJack-Examples
 
 How To Build
 ============
@@ -17,7 +17,7 @@ QtJack solely relies on a recent Qt and libjack/libjack2. Install using the foll
 
 or on Archlinux:
 
-`sudo pacman -S jack2`
+`sudo pacman -S jack2 qt5-core`
 
 Afterwards: 
 
@@ -125,6 +125,11 @@ https://github.com/cybercatalyst/qt-pods
 
 - I switched to CMake Build System, so there is no support to QTPods anymore
   - but I'm open for suggestion how to add this to my build scripts
+
+History
+========
+- 2022-03-08 version 1.0.1. 
+  - complete exchange of build script generation from QMake to modern Cmake
 
 
 License
