@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(qtjack
   DESCRIPTION "a qt jack lib"
+  VERSION 1.0.1
   LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${PROJECT_SOURCE_DIR}/cmake")  
@@ -69,17 +70,24 @@ QT5_WRAP_CPP(QTJACK_MOCrcs
 add_library(qtjack SHARED
     ${QTJACK_SOURCES}
     ${QTJACK_HEADERS}
+)
+
+target_sources(qtjack PRIVATE
+    ${QTJACK_SOURCES}
+    ${QTJACK_HEADERS}
     ${QTJACK_MOCrcs}
 )
 
-target_include_directories(qtjack PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 target_include_directories(qtjack PRIVATE include)
+target_include_directories(qtjack PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(qtjack PUBLIC 
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>/qtjack)
 target_include_directories(qtjack SYSTEM
   PUBLIC ${Qt5Core_INCLUDE_DIRS})
 target_include_directories(qtjack SYSTEM
   PUBLIC ${JACK_INCLUDE_DIRS})
 
-target_link_libraries(qtjack PRIVATE 
+target_link_libraries(qtjack PUBLIC 
     ${JACK_LIBRARIES}
     Qt5::Core)
 
