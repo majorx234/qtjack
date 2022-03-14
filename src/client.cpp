@@ -565,5 +565,10 @@ void Client::infoShutdownCallback(jack_status_t code, const char* reason, void *
         jackClient->infoShutdown(code, reason);
     }
 }
+double Client::getJackTime() {
+    double sampleRate = jack_get_sample_rate(_jackClient);
+    jack_nframes_t nframes = jack_last_frame_time(_jackClient);
+    return (nframes * 1000.0) / sampleRate;
+}
 
 } // namespace QtJack

@@ -154,7 +154,7 @@ public:
      * @returns true if successful, false otherwise.
      */
     bool requestTransportReposition(TransportPosition queryTransportPosition);
-
+    double getJackTime();
 Q_SIGNALS:
     /** Emitted when successfully connected to JACK server. */
     void connectedToServer();
