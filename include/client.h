@@ -156,6 +156,7 @@ public:
     bool requestTransportReposition(TransportPosition queryTransportPosition);
     double getJackTimeInMs(); 
     int getJackTime();
+    int getJackFrameTime();
 Q_SIGNALS:
     /** Emitted when successfully connected to JACK server. */
     void connectedToServer();

@@ -576,4 +576,9 @@ int Client::getJackTime() {
     jack_nframes_t nframes = jack_last_frame_time(_jackClient);
     return nframes;
 }
+
+int Client::getJackFrameTime() {
+    jack_nframes_t nframes = jack_frame_time(_jackClient);
+    return nframes;
+}
 } // namespace QtJack
