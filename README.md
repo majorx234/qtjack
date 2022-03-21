@@ -128,7 +128,9 @@ https://github.com/cybercatalyst/qt-pods
 
 History
 ========
-- 2022-03-08 version 1.0.1. 
+- 2022-03-14 Version 1.0.2
+  - Add access to jack time 
+- 2022-03-08 version 1.0.1 
   - complete exchange of build script generation from QMake to modern Cmake
 
 
