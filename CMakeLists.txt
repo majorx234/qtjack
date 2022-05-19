@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(qtjack
   DESCRIPTION "a qt jack lib"
-  VERSION 1.0.2
+  VERSION 1.0.3
   LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${PROJECT_SOURCE_DIR}/cmake")  
@@ -23,6 +23,7 @@ set(QTJACK_HEADERS
   include/LICENSE
   include/MidiBuffer
   include/MidiEvent
+  include/MidiMsg
   include/MidiPort
   include/Parameter
   include/Port
@@ -39,6 +40,7 @@ set(QTJACK_HEADERS
   include/global.h
   include/midibuffer.h
   include/midievent.h
+  include/midimsg.h
   include/midiport.h
   include/parameter.h
   include/port.h
