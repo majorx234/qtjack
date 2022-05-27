@@ -36,4 +36,18 @@ struct MidiMsg {
 typedef RingBuffer<MidiMsg> MidiMsgRingBuffer;
 
 }// namespace QtJack
+
+Q_DECLARE_METATYPE(QtJack::MidiMsg)
+
+namespace QtJack {
+    class MidiMsgMetaTypeInitializer {
+    public:
+        MidiMsgMetaTypeInitializer() {
+            qRegisterMetaType<QtJack::MidiMsg>();
+        }
+    };
+
+    static MidiMsgMetaTypeInitializer midiMsgMetaTypeInitializer;
+} // namespace QtJack
+
 #endif // MIDI_MSG_H_
