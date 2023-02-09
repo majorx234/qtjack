@@ -29,7 +29,7 @@ namespace QtJack {
 
 struct MidiMsg {
   unsigned char midiData[3];
-  int length;
+  size_t length;
   jack_nframes_t timestamp;
 };
 
