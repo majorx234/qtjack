@@ -39,6 +39,7 @@ class MidiEvent :
     public jack_midi_event_t {
 public:
     MidiEvent();
+    ~MidiEvent();
 };
 
 } // namespace QtJack

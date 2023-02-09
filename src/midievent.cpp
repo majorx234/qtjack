@@ -30,4 +30,8 @@ namespace QtJack {
 MidiEvent::MidiEvent() {
 }
 
+MidiEvent::~MidiEvent() {
+    delete[] this.buffer;
+}
+
 } // namespace QtJack
